@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#container
+{
+    width: 85%;
+    margin: 30px auto;
+    display: grid;
+    grid-template-rows: repeat(2, minmax(300px, auto));
+    padding: 0 10px;
+ 
+
+}
+#container h1{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: rgba(0, 0, 0, 0.863);
+}
+
+/* styles for the form field */
+
+.form_field form input
+{
+    width: 100%;
+    height: 28px;
+    padding: 0 10px;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.801);
+    border-radius: 5px;
+}
+.form_field form div
+{
+margin:  20px 0px;
+}
+.form_field form div label{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+#btn
+{
+    max-width: 150px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid green;
+}
+#btn:hover
+{
+opacity: 0.8;
+color: green;
+}
+
+/* style for the table */
+
+.table_field table{
+    border-collapse: collapse;
+    
+
+margin-top: 15px;
+
+
+width: 100%;
+}
+.table_field table th{
+border-bottom: 1px solid rgba(128, 128, 128, 0.714);
+padding: 20px 0 14px 0;
+font-weight: 550;
+color: rgba(0, 0, 0, 0.792);
+font-size: 14px;
+text-align: left;
+}
+.table_field table td{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.593);
+}
+.table_field table td{
+    padding: 20px 0;
+    width: 32%;
+  
+    text-transform: capitalize;
+    font-size: 14px;
+}
+.table_field table td a 
+{
+    text-decoration: none;
+    color: red;
+}
+.table_field table td a:hover
+{
+    color: black;
+}
+
+.table_field table td span
+{
+    position:  absolute;
+    color: rgba(5, 183, 5, 0.922);
+    right:  22%;    
+}
+.new 
+{
+  text-transform: capitalize;
+    padding: 10px;
+    color: white;
+    font-size: 13px;
+    border-radius: 3px;
+}
+.success
+{
+    background-color: rgba(6, 209, 6, 0.797);
+  
+}
+.danger
+{
+    background-color: rgba(255, 0, 0, 0.905);
+}
+@media screen and (max-width: 600px) {
+    
+    #container
+{
+    width: 95%;
+    margin: 50px  auto 0;
+    display: grid;
+    grid-template-rows: repeat(2, minmax(300px, auto));
+    padding: 0 10px;
+ 
+
+}
+.table_field table td{
+    font-size: 12px;
+}
+.table_field table th{
+    font-size: 13px;
+}
+
+.table_field table td span
+{
+font-size: 11px;
+    right:  17%;    
+}
+}

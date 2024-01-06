@@ -15,6 +15,8 @@ const min = 1,
       winingNum = getwinningNum(min, max);
 let guestLife = 3;
 let around_wining = 0;
+let show =  document.querySelector('.show');
+let hint = document.querySelector('.hint');
 
 // basically use to reload the again
 
@@ -29,11 +31,12 @@ const submitButton = document.getElementById('btn'),
       maxField = document.querySelector('.max-num');
       messageLog = document.querySelector('.message');
       game = document.querySelector('#game');
-
+      put = document.querySelector('.lif')
       maxField.textContent = max;
       minField.textContent = min;
+      put.innerHTML = guestLife;
 
-
+      console.log(put)
 
 // 
 
@@ -46,6 +49,8 @@ game.addEventListener('mousedown', function(e)
 
     
 });
+
+hint.style.display = "none";
  
 // ading event listiner to the submit button
 
@@ -60,24 +65,39 @@ submitButton.addEventListener('click', function(e){
         message(`Enter value in the range of ${min} to ${max}`, 'red');
         inputField.style.borderColor = 'red'
         inputField.value = "";
+        
     }
 else{
 
     if (guessValue === winingNum)
     {
         gameOver(`Congratulation you guess right the correct number is ${winingNum}, You won!!`, true);
- 
+
     }
     else
     {
         guestLife -=1;
-        message(`Sorry you lost this round.. try again your guesslife ${guestLife}`, 'red');
+        put.innerHTML = guestLife;
+        message(`Sorry you lost this round.. try again your guesslife is ${guestLife}`, 'red');
         inputField.style.borderColor = "red";
+       
 
-        if (guestLife == 0)
+        // to display hiny button
+        
+        if (guestLife == 1)
+        {
+            hint.style.display = "block";
+        }
+        else{
+            hint.style.display = "none";
+        }
+        
+
+        if (guestLife <= 0)
         {
             gameOver(`Opps! You lost game over the wining number is ${winingNum}`, false);
         }
+      
 
     }
 }
@@ -122,3 +142,31 @@ function getwinningNum(min, max)
 {
     return Math.floor(Math.random()*(max-min+1)+min);
 }
+
+hint.addEventListener('click', Checkint);
+
+
+// show hint button
+
+
+
+
+function Checkint()
+{
+guestLife--;
+put.innerHTML = guestLife;
+message(`Your guesslife is ${guestLife}`, 'red');
+if (winingNum % 2 == 0)
+{
+    show.style.color = "green";
+    show.innerHTML = "The guess number is even";
+  
+
+}
+else
+{
+    show.style.color = "red";
+    show.innerHTML = "The guess number is odd";
+}
+}
+
