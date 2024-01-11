@@ -1,5 +1,7 @@
 # Password Generator App
 
+This JavaScript project provides a user interface for generating passwords with various options. The project uses the UI_action class to handle UI interactions, display password strength, and generate secure passwords.
+
 ![](./screenshot.png)
 
 
@@ -15,7 +17,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution](https://www.frontendmentor.io/solutions/password-generator-app-gg4S2VfdYH)
+
 - [Live Site](https://randpass-fm.netlify.app/)
 
 ### Built with
@@ -26,6 +28,21 @@ Users should be able to:
 - Flexbox
 - Desktop-first workflow
 
-## Author
+## Features
 
-- Frontend Mentor [@Isaiah-B](https://www.frontendmentor.io/profile/Isaiah-B)
+    - Range Slider:
+        Users can adjust the length of the generated password using a range slider.
+        The current range value is dynamically displayed.
+
+    - Options Toggles:
+        Users can toggle options for including uppercase letters, lowercase letters, numbers, and symbols in the generated password.
+
+   -  Password Strength Indicator:
+        Password strength is indicated by colored bars, updating based on the selected options.
+        Five strength levels: LOW, MEDIUM, HIGH, STRONG, and NO PASSWORD.
+
+    - Generate Password Button:
+        Clicking the "Generate Password" button generates a password based on the selected options and displays it in the designated area.
+
+    - Error Handling:
+        If no options are selected, an error message is displayed to prompt the user to select at least one option.
