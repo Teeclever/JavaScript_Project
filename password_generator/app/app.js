@@ -22,11 +22,29 @@ const symbols = document.querySelector('#symbols');
 // the generate password button
 const Generate = document.querySelector('#generate');
 
+
+// range.addEventListener('touchstart', () => {
+//   // calling a method that always changes ithe range
+//   perform.rangechange();
+// });
+
+
 // this eventlistner which even ever the scrollbar is move and also calling a method for that action
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+
+if (isTouchDevice) {
+  range.addEventListener('touchstart', () => {
+    // calling a method that changes the range
+    perform.rangechange();
+  });
+}
 range.addEventListener('mousemove', () => {
-  // calling a method that always changes ithe range
+  // calling a method that changes the range
   perform.rangechange();
 });
+
+
+
 
 // this is to add event on each ticks to display the password level for each ticks
 const tick = document.querySelector('.pick').addEventListener('click', (e) => {
