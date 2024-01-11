@@ -19,8 +19,6 @@ const symbols = document.querySelector('#symbols');
 
 // grouping all the info into an object of data about the password
 
-
-
 // the generate password button
 const Generate = document.querySelector('#generate');
 
@@ -34,32 +32,27 @@ range.addEventListener('mousemove', () => {
 const tick = document.querySelector('.pick').addEventListener('click', (e) => {
   if (e.target.className == 'check') {
     const info = {
-        range: range.value,
-        upper: upper.checked,
-        lower: lower.checked,
-        number: number.checked,
-        symbols: symbols.checked
-      };
+      range: range.value,
+      upper: upper.checked,
+      lower: lower.checked,
+      number: number.checked,
+      symbols: symbols.checked
+    };
 
-    
-  /// im using setter that why im using equal sign un calling the method
-        perform.levels = info;
+    /// im using setter that why im using equal sign un calling the method
+    perform.levels = info;
   }
 });
 
 Generate.addEventListener('click', () => {
-
-
-
-    const info = {
-        range: range.value,
-        upper: upper.checked,
-        lower: lower.checked,
-        number: number.checked,
-        symbols: symbols.checked
-      };
-    let fileds = [range, upper, lower, number, symbols]
+  const info = {
+    range: range.value,
+    upper: upper.checked,
+    lower: lower.checked,
+    number: number.checked,
+    symbols: symbols.checked
+  };
+  const fileds = [range, upper, lower, number, symbols];
   /// im using setter that why im using equal sign un calling the method
   perform.generate(info, fileds);
-
 });

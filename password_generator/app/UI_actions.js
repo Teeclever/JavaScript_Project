@@ -11,7 +11,6 @@ export class UI_action {
     this.bar4 = document.querySelector('.bar4');
     this.generalbar = document.querySelectorAll('.bar');
     this.parent = document.querySelector('.container');
-   
   }
 
   rangechange () {
@@ -75,8 +74,7 @@ export class UI_action {
     });
   }
 
-   generate (object, fields) {
-
+  generate (object, fields) {
     let capsAlpha = this.generateALpha(65, 90);
     let smallAlpha = this.generateALpha(97, 122);
     let Numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -115,71 +113,46 @@ export class UI_action {
 
       this.display.value = password;
 
-
-      //clear fiiled
-      this.clearfields(fields);
-
+      // clear fiiled
+      // this.clearfields(fields);
     } else {
-        
-        this.alerterr();
-
-
+      this.alerterr();
     }
   }
 
-  ///display errs
+  /// display errs
 
-  alerterr()
-  {
-
-    if (document.querySelector('.err'))
-    {
-        document.querySelector('.err').style.display = "none";
+  alerterr () {
+    if (document.querySelector('.err')) {
+      document.querySelector('.err').style.display = 'none';
     }
-
 
     const element = document.createElement('p');
-    element.appendChild(document.createTextNode("Please Tick a box amoung the options bellow"))
+    element.appendChild(document.createTextNode('Please Tick a box amoung the options bellow'));
 
-    element.className = "err";
+    element.className = 'err';
 
-    this.parent.insertBefore(element, this.parent.firstElementChild)
+    this.parent.insertBefore(element, this.parent.firstElementChild);
 
-    setTimeout(this.removerr, 3000)
-  
+    setTimeout(this.removerr, 3000);
   }
-  removerr ()
-  {
 
-    if (document.querySelector('.err'))
-    {
-        document.querySelector('.err').style.display = "none";
+  removerr () {
+    if (document.querySelector('.err')) {
+      document.querySelector('.err').style.display = 'none';
     }
-
-
   }
-  //clearfields
+  // clearfields
 
-  clearfields(fields)
-  {
-      fields[1].checked = false;
-
+  clearfields (fields) {
+    fields[1].checked = false;
 
     fields[4].checked = false;
 
-    this.showlevs.innerHTML = " MEDIUM"
+    this.showlevs.innerHTML = ' MEDIUM';
     this.changebar(2, ['blue', 'blue', 'black', 'black']);
-    
   }
 
-
-
-
-
-
-
-
-  
   generateALpha (val1, val2) {
     const container = [];
     for (let i = val1; i <= val2; i++) {
