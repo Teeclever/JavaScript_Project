@@ -1,0 +1,73 @@
+
+  .char-include-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3.4rem;
+  }
+  
+  label {
+    display: block;
+    padding-left: 4.4rem;
+    position: relative;
+  }
+  
+  input[type=checkbox] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  
+  .custom-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 1.1rem;
+    border-radius: 1px;
+    width: 1.1rem;
+    border: 2px solid hsl(252, 11%, 91%);
+    cursor: pointer;
+  }
+  
+  .custom-checkbox::after {
+    display: none;
+    content: '\2713'; /* Unicode character for checkmark */
+    font-size: 0.9rem; /* Adjust the font size as needed */
+    color: black; /* Change the color to match your design */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .custom-checkbox:hover {
+    border-color: #00fd0a;
+  }
+  
+  input[type=checkbox]:checked ~ .custom-checkbox {
+    border-color: #00fd0a;
+    background-color: #00fd0a;
+  }
+  
+  input[type=checkbox]:checked ~ .custom-checkbox::after {
+    display: block;
+  }
+  
+  input[type=checkbox]:focus ~ .custom-checkbox {
+    outline: 2px solid Highlight;
+    outline: 2px solid -webkit-focus-ring-color;
+  }
+
+  @media screen and (max-width: 600px) {
+    
+
+    .custom-checkbox {
+      height: 1.0rem;
+      border-radius: 1px;
+      width: 1.0rem;
+    }
+  }

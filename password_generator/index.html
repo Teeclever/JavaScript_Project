@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/color.css">
+    <link rel="stylesheet" href="./css/checkedbox.css">
+  </head>
+  <body>
+    <section class="container">
+      <p>dfhjkfr</p>
+        <h2>Password Generator</h2>
+      <div class="grid">
+        
+        <div class="result">
+          <input type="text" id="display" value="P4$5W0rD!1" disabled/>
+          <img src="./images/icon-copy.svg" alt="">
+        </div>
+
+        <div class="option">
+            <div class="show">
+                <p>Character Length</p>
+                <span id="rang">12</span>
+            </div>
+
+            <div class="pick">
+            <input 
+            id="len" 
+            aria-label="Password length" 
+            type="range" 
+            min="1" 
+            max="20" 
+            value="" 
+            autocomplete="off"
+          />
+          <label>
+            <input type="checkbox" id="uppercase"  class="check"  value="uppercase"/>
+            <span class="custom-checkbox"></span>
+            <p>Include Uppercase Letters</p>
+          </label>
+          <label>
+            <input type="checkbox" id="lowercase"  class="check" value="lowercase" checked/>
+            <span class="custom-checkbox"></span>
+            <p>Include Lowercase Letters</p>
+          </label>
+          <label>
+            <input type="checkbox" id="numbers" class="check"  value="numbers" checked/>
+            <span class="custom-checkbox"></span>
+            <p>Include Numbers</p>
+          </label>
+          <label>
+            <input type="checkbox" id="symbols" class="check"  value="symbols"/>
+            <span class="custom-checkbox"></span>
+            <p>Include Symbols</p>
+          </label>
+            </div>
+
+            <div class="action">
+                <div class="first">
+                <h3>STRENGTH</h3>
+                <div class="level">
+                    <span id="levs">HIGH</span>
+                  <div class="bar  bar1"></div>
+                  <div class="bar bar2"></div>
+                  <div class="bar bar3"></div>
+                  <div class="bar bar4"></div>
+                </div>
+                </div>
+                <div class="second">
+                    <button id="generate">GENERATE</button>
+                    <img class= "img" src="./images/icon-arrow-right.svg" alt="">
+
+                </div>
+ 
+            </div>
+           
+           
+        </div>
+      
+      </div>
+    </section>
+
+<footer>@Teeclever</footer>
+    <!-- script for implementations -->
+
+    <script type="module" src="./app/app.js"></script>
+  
+  </body>
+</html>
